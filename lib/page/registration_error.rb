@@ -1,0 +1,3 @@
+
+class RegistrationError
+end
