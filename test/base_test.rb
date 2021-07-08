@@ -1,18 +1,23 @@
+# frozen_string_literal: true
+
 require 'selenium-webdriver'
 require 'minitest/autorun'
 require 'minitest/reporters'
 
 # Base class for UI tests.
 class BaseTest < Minitest::Test
-  Minitest::Reporters.use! [Minitest::Reporters::SpecReporter.new,
-                            Minitest::Reporters::JUnitReporter.new]
+  Minitest::Reporters.use! unless ENV['RM_INFO']
+  # TODO: Review next line
+  # [Minitest::Reporters::SpecReporter.new, Minitest::Reporters::JUnitReporter.new]
 
+  # TODO: review
   # @driver = Selenium::WebDriver.for :chrome,
   # desired_capabilities: Selenium::WebDriver::Remote::Capabilities.chrome(
   #   'chromeOptions' => {
   #     'args' => %w[--disable-infobars --disable-web-security]
   #   }
   # )
+
   BROWSER = :chrome
   CAPS = Selenium::WebDriver::Remote::Capabilities.chrome(
     'chromeOptions' => {
@@ -21,8 +26,7 @@ class BaseTest < Minitest::Test
   )
 
   # Test environments
-  HEROKU = 'https://id.heroku.com/login'.freeze
-  THE_INTERNET = 'http://the-internet.herokuapp.com'.freeze
-  GOOGLE = 'https://www.google.com'.freeze
+  GITHUB = 'https://jsherling.github.io'
+  THE_INTERNET = 'https://the-internet.herokuapp.com'
   ENV['base_url'] = THE_INTERNET
 end

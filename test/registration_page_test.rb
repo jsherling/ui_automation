@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 $LOAD_PATH.push 'lib/page'
 require_relative 'base_test'
-require 'registration_page'
+require '../lib/page/registration_page'
 
 # Test Demo QA Registration page
 class DemoQaRegistrationTest < BaseTest
@@ -14,6 +16,7 @@ class DemoQaRegistrationTest < BaseTest
   end
 
   def test_one
-
+    # TODO: create a real test
+    assert_match true, true
   end
 end

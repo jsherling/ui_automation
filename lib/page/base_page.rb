@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'selenium-webdriver'
 require 'selenium/webdriver/common/action_builder'
 require 'selenium/webdriver/common/error'
@@ -65,9 +67,9 @@ class BasePage
     select_list.select_by(method, option)
   end
 
-  def wait_for(seconds = 30)
+  def wait_for(seconds = 30, &block)
     puts "Explicit wait up to #{seconds} seconds for..."
-    Selenium::WebDriver::Wait.new(timeout: seconds).until { yield }
+    Selenium::WebDriver::Wait.new(timeout: seconds).until(&block)
   end
 
   private

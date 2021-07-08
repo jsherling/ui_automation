@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 
-class RegistrationError
-end
+# Register errors encountered during testing
+class RegistrationError; end

@@ -1,8 +1,28 @@
-.idea/vcs.xml
-.idea/dictionaries/
-.idea/misc.xml
-.idea/modules.xml
-.idea/ui_automation.iml
-.idea/workspace.xml
-results/
-test/results
+## RUBY + PROJECT
+*.gem
+/spec/reports/
+/spec/examples.txt
+/test/tmp/
+/test/version_tmp/
+/test/reports
+/tmp/
+/results/
+*.log
+
+## Documentation cache and generated files:
+/.yardoc/
+/_yardoc/
+/doc/
+/rdoc/
+
+## Environment normalization:
+/.bundle/
+/vendor/bundle
+/lib/bundler/man/
+
+## JetBrains
+.idea
+
+## Misc
+.DS_Store
+!.gitignore
