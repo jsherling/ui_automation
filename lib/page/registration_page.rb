@@ -8,6 +8,10 @@ class RegistrationPage < BasePage
 
   def initialize(*args)
     super args[0]
-    visit PAGE_URL if args.count == 1
+    if args.count == 1
+      visit PAGE_URL
+    else
+      visit args[1]
+    end
   end
 end
